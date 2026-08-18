@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.service
+package com.bnightning.mavenpicker.service
 
 object MavenCommandBuilder {
 

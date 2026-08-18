@@ -3,8 +3,9 @@ plugins {
     id("org.jetbrains.intellij") version "1.17.3"
 }
 
-group = "com.bn"
-version = "0.1.8"
+group = "com.bnightning"
+// 支持通过 CI/命令行传入 -PpluginVersion=xxx 来覆盖版本（例如从 GitHub tag 解析得到）
+version = (findProperty("pluginVersion") as String?) ?: "0.0.1-beta"
 
 repositories {
     mavenCentral()

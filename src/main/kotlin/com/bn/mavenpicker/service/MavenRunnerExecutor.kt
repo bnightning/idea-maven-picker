@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.service
+package com.bnightning.mavenpicker.service
 
 import com.intellij.execution.process.ProcessAdapter
 import com.intellij.execution.process.ProcessEvent

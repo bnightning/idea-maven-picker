@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.service
+package com.bnightning.mavenpicker.service
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

@@ -1,0 +1,49 @@
+name: Build (tag release)
+
+on:
+  push:
+    tags:
+      # 例如 v1.2.3 或 v1.2.3-beta
+      - "v*.*.*"
+      - "*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Extract version from tag
+        id: vars
+        shell: bash
+        run: |
+          # Example:
+          # - v0.1.9  -> 0.1.9
+          # - 0.1.9   -> 0.1.9
+          version="${GITHUB_REF_NAME#v}"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Build plugin zip
+        run: |
+          chmod +x ./gradlew
+          ./gradlew buildPlugin -PpluginVersion="${{ steps.vars.outputs.version }}"
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          files: |
+            build/distributions/*.zip
+

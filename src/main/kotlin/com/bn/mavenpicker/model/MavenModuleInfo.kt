@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.model
+package com.bnightning.mavenpicker.model
 
 data class MavenModuleInfo(
     /** 相对 Reactor 根目录的路径选择器，例如 `dq-services/dq-auth-service-v2` */

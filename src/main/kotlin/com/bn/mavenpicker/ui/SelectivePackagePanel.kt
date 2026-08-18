@@ -1,10 +1,10 @@
-package com.bn.mavenpicker.ui
+package com.bnightning.mavenpicker.ui
 
-import com.bn.mavenpicker.model.MavenModuleInfo
-import com.bn.mavenpicker.service.MavenCommandBuilder
-import com.bn.mavenpicker.service.MavenModuleResolver
-import com.bn.mavenpicker.service.MavenRunnerExecutor
-import com.bn.mavenpicker.settings.MavenPickerSettings
+import com.bnightning.mavenpicker.model.MavenModuleInfo
+import com.bnightning.mavenpicker.service.MavenCommandBuilder
+import com.bnightning.mavenpicker.service.MavenModuleResolver
+import com.bnightning.mavenpicker.service.MavenRunnerExecutor
+import com.bnightning.mavenpicker.settings.MavenPickerSettings
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.ui.Messages

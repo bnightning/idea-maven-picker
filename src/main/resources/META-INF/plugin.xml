@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>com.bn.mavenpicker</id>
+    <id>com.bnightning.mavenpicker</id>
     <name>IDEA Maven Picker</name>
-    <vendor email="dev@bn.com">bn</vendor>
+    <vendor email="bnightning@163.com">Bnightning</vendor>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.idea.maven</depends>
@@ -11,7 +11,7 @@
         <toolWindow id="Maven Picker"
                     anchor="right"
                     icon="AllIcons.Nodes.Module"
-                    factoryClass="com.bn.mavenpicker.ui.MavenPickerToolWindowFactory"/>
+                    factoryClass="com.bnightning.mavenpicker.ui.MavenPickerToolWindowFactory"/>
     </extensions>
 
     <actions>
@@ -21,7 +21,7 @@
                description="Selectively package Maven modules">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <action id="MavenPicker.SelectivePackageAction"
-                    class="com.bn.mavenpicker.action.SelectivePackageAction"
+                    class="com.bnightning.mavenpicker.action.SelectivePackageAction"
                     text="Selective Package"
                     description="打开右侧 Maven Picker 工具窗口"/>
         </group>

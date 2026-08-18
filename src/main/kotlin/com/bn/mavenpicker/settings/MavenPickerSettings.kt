@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.settings
+package com.bnightning.mavenpicker.settings
 
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.Service

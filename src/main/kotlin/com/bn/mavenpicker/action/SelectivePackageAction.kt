@@ -1,4 +1,4 @@
-package com.bn.mavenpicker.action
+package com.bnightning.mavenpicker.action
 
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction

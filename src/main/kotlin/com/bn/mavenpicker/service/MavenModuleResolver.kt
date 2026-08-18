@@ -1,7 +1,7 @@
-package com.bn.mavenpicker.service
+package com.bnightning.mavenpicker.service
 
-import com.bn.mavenpicker.model.MavenModuleInfo
-import com.bn.mavenpicker.model.MavenScanResult
+import com.bnightning.mavenpicker.model.MavenModuleInfo
+import com.bnightning.mavenpicker.model.MavenScanResult
 import com.intellij.openapi.project.Project
 import org.jetbrains.idea.maven.project.MavenProject
 import org.jetbrains.idea.maven.project.MavenProjectsManager
