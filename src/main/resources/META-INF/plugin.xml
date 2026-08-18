@@ -12,6 +12,7 @@
                     anchor="right"
                     icon="AllIcons.Nodes.Module"
                     factoryClass="com.bnightning.mavenpicker.ui.MavenPickerToolWindowFactory"/>
+        <projectService serviceImplementation="com.bnightning.mavenpicker.ui.MavenPickerPanelRegistry"/>
     </extensions>
 
     <actions>
@@ -24,6 +25,27 @@
                     class="com.bnightning.mavenpicker.action.SelectivePackageAction"
                     text="Selective Package"
                     description="打开右侧 Maven Picker 工具窗口"/>
+            <action id="MavenPicker.SelectGitChanged"
+                    class="com.bnightning.mavenpicker.action.SelectGitChangedModulesAction"
+                    text="选择 Git 变更模块"/>
+            <action id="MavenPicker.RunGoal"
+                    class="com.bnightning.mavenpicker.action.RunMavenGoalAction"
+                    text="执行当前 Goal">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl ENTER"/>
+            </action>
+            <action id="MavenPicker.CopyCommand"
+                    class="com.bnightning.mavenpicker.action.CopyMavenCommandAction"
+                    text="复制 Maven 命令">
+                <keyboard-shortcut keymap="$default" first-keystroke="control shift C"/>
+            </action>
         </group>
+
+        <action id="MavenPicker.AddModule"
+                class="com.bnightning.mavenpicker.action.AddModuleToMavenPickerAction"
+                text="加入 Maven Picker 选择"
+                description="将模块加入 Maven Picker 勾选列表">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>

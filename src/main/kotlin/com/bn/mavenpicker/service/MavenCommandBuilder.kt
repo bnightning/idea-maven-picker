@@ -1,10 +1,12 @@
 package com.bnightning.mavenpicker.service
 
+import com.bnightning.mavenpicker.model.MavenRunOptions
+
 object MavenCommandBuilder {
 
     fun buildPreview(
         selectors: List<String>,
-        alsoMake: Boolean,
+        options: MavenRunOptions,
         goals: List<String> = listOf("clean", "package")
     ): String {
         if (selectors.isEmpty()) {
@@ -15,21 +17,30 @@ object MavenCommandBuilder {
             append(goals.joinToString(" "))
             append(" -pl ")
             append(selectors.joinToString(","))
-            if (alsoMake) {
-                append(" -am")
-            }
+            options.commandOptions().forEach { append(" ").append(it) }
         }
     }
 
     fun buildDualPreview(
         selectors: List<String>,
-        alsoMake: Boolean,
+        options: MavenRunOptions,
         packageGoals: List<String>
     ): String {
         if (selectors.isEmpty()) {
             return "（未选择模块）"
         }
-        return "Clean: ${buildPreview(selectors, alsoMake, listOf("clean"))}\n" +
-            "Package: ${buildPreview(selectors, alsoMake, packageGoals)}"
+        return "Clean: ${buildPreview(selectors, options, listOf("clean"))}\n" +
+            "Package: ${buildPreview(selectors, options, packageGoals)}"
+    }
+
+    fun buildExecutionPreview(
+        selectors: List<String>,
+        options: MavenRunOptions,
+        goals: List<String>
+    ): String {
+        if (selectors.isEmpty()) {
+            return "（未选择模块）"
+        }
+        return buildPreview(selectors, options, goals)
     }
 }

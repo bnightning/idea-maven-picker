@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # 构建 IDEA 插件 zip 的脚本
-# 默认使用 build.gradle.kts 里定义的 version（当前为 0.0.1-beta）
+# 默认使用 build.gradle.kts 里定义的 version（当前为 0.0.2-alpha）
 #
 # 可选：通过 --version/-v 覆盖版本（例如：./build-plugin.sh -v 1.2.3-beta）
 

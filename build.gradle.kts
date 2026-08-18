@@ -5,7 +5,7 @@ plugins {
 
 group = "com.bnightning"
 // 支持通过 CI/命令行传入 -PpluginVersion=xxx 来覆盖版本（例如从 GitHub tag 解析得到）
-version = (findProperty("pluginVersion") as String?) ?: "0.0.1-beta"
+version = (findProperty("pluginVersion") as String?) ?: "0.0.2-alpha"
 
 repositories {
     mavenCentral()
@@ -50,7 +50,15 @@ tasks {
             执行 <code>mvn clean package -pl &lt;相对路径&gt; -am</code>。
             """.trimIndent()
         )
-        changeNotes.set("新增独立 Clean 执行；顶部按钮改为等宽布局，预设收入下拉框。")
+        changeNotes.set(
+            """
+            <ul>
+              <li>新增 test/verify/install/deploy 与自定义 Goal</li>
+              <li>Git 变更模块识别、多 Reactor 分批执行、最近使用记录</li>
+              <li>预设 JSON 导入导出、Maven 自动刷新、依赖提示与快捷键</li>
+            </ul>
+            """.trimIndent()
+        )
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
