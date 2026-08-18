@@ -36,8 +36,8 @@ jobs:
 
       - name: Build plugin zip
         run: |
-          chmod +x ./gradlew
-          ./gradlew buildPlugin -PpluginVersion="${{ steps.vars.outputs.version }}"
+          chmod +x ./build-plugin.sh
+          ./build-plugin.sh --version "${{ steps.vars.outputs.version }}"
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
