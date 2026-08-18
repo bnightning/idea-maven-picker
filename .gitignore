@@ -1,0 +1,19 @@
+.gradle/
+build/
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+.DS_Store
+
+# Maven
+target/
+
+# Optional local/temporary files
+.classpath
+.project
+.settings/
+*.log
+*.tmp
+*.swp

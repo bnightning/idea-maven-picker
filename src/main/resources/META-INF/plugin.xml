@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.bn.mavenpicker</id>
+    <name>IDEA Maven Picker</name>
+    <vendor email="dev@bn.com">bn</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.idea.maven</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="Maven Picker" displayType="BALLOON"/>
+        <toolWindow id="Maven Picker"
+                    anchor="right"
+                    icon="AllIcons.Nodes.Module"
+                    factoryClass="com.bn.mavenpicker.ui.MavenPickerToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <group id="MavenPicker.Menu"
+               text="Maven Picker"
+               popup="true"
+               description="Selectively package Maven modules">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="MavenPicker.SelectivePackageAction"
+                    class="com.bn.mavenpicker.action.SelectivePackageAction"
+                    text="Selective Package"
+                    description="打开右侧 Maven Picker 工具窗口"/>
+        </group>
+    </actions>
+</idea-plugin>
